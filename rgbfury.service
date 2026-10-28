@@ -1,0 +1,11 @@
+[Unit]
+Description=Set Kingston FURY RAM RGB color
+After=systemd-modules-load.service suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 2
+ExecStart=/usr/local/bin/rgbfury.sh red 100
+
+[Install]
+WantedBy=multi-user.target suspend.target hibernate.target hybrid-sleep.target
